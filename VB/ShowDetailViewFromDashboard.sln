@@ -1,0 +1,54 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ShowDetailViewFromDashboard.Module", "ShowDetailViewFromDashboard.Module\ShowDetailViewFromDashboard.Module.vbproj", "{6CF8D902-9F2E-4CC0-9EC8-DB88D48AC20A}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ShowDetailViewFromDashboard.Module.Web", "ShowDetailViewFromDashboard.Module.Web\ShowDetailViewFromDashboard.Module.Web.vbproj", "{ADD720EB-F466-4302-A037-4C6960EF73C8}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ShowDetailViewFromDashboard.Web", "ShowDetailViewFromDashboard.Web\ShowDetailViewFromDashboard.Web.vbproj", "{F6E15953-E214-48F7-9A4A-94BBD176D72C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ShowDetailViewFromDashboard.Module.Win", "ShowDetailViewFromDashboard.Module.Win\ShowDetailViewFromDashboard.Module.Win.vbproj", "{B4D53FEE-9258-4477-8CEF-43B77041D94A}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ShowDetailViewFromDashboard.Win", "ShowDetailViewFromDashboard.Win\ShowDetailViewFromDashboard.Win.vbproj", "{532A070E-15F9-4B63-A325-4E03E77FD9A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		EasyTest|Any CPU = EasyTest|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CF8D902-9F2E-4CC0-9EC8-DB88D48AC20A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CF8D902-9F2E-4CC0-9EC8-DB88D48AC20A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CF8D902-9F2E-4CC0-9EC8-DB88D48AC20A}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{6CF8D902-9F2E-4CC0-9EC8-DB88D48AC20A}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{6CF8D902-9F2E-4CC0-9EC8-DB88D48AC20A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CF8D902-9F2E-4CC0-9EC8-DB88D48AC20A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADD720EB-F466-4302-A037-4C6960EF73C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD720EB-F466-4302-A037-4C6960EF73C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD720EB-F466-4302-A037-4C6960EF73C8}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{ADD720EB-F466-4302-A037-4C6960EF73C8}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{ADD720EB-F466-4302-A037-4C6960EF73C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD720EB-F466-4302-A037-4C6960EF73C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6E15953-E214-48F7-9A4A-94BBD176D72C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6E15953-E214-48F7-9A4A-94BBD176D72C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6E15953-E214-48F7-9A4A-94BBD176D72C}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{F6E15953-E214-48F7-9A4A-94BBD176D72C}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{F6E15953-E214-48F7-9A4A-94BBD176D72C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6E15953-E214-48F7-9A4A-94BBD176D72C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4D53FEE-9258-4477-8CEF-43B77041D94A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4D53FEE-9258-4477-8CEF-43B77041D94A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4D53FEE-9258-4477-8CEF-43B77041D94A}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{B4D53FEE-9258-4477-8CEF-43B77041D94A}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{B4D53FEE-9258-4477-8CEF-43B77041D94A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4D53FEE-9258-4477-8CEF-43B77041D94A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{532A070E-15F9-4B63-A325-4E03E77FD9A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{532A070E-15F9-4B63-A325-4E03E77FD9A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{532A070E-15F9-4B63-A325-4E03E77FD9A2}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{532A070E-15F9-4B63-A325-4E03E77FD9A2}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{532A070E-15F9-4B63-A325-4E03E77FD9A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{532A070E-15F9-4B63-A325-4E03E77FD9A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
