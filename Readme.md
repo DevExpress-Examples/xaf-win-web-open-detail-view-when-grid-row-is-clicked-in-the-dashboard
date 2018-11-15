@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [WebShowDetailViewFromDashboardController.cs](./CS/ShowDetailViewFromDashboard.Module.Web/Controllers/WebShowDetailViewFromDashboardController.cs) (VB: [WebShowDetailViewFromDashboardController.vb](./VB/ShowDetailViewFromDashboard.Module.Web/Controllers/WebShowDetailViewFromDashboardController.vb))
+* [WinShowDetailViewFromDashboardController.cs](./CS/ShowDetailViewFromDashboard.Module.Win/Controllers/WinShowDetailViewFromDashboardController.cs) (VB: [WinShowDetailViewFromDashboardController.vb](./VB/ShowDetailViewFromDashboard.Module.Win/Controllers/WinShowDetailViewFromDashboardController.vb))
+<!-- default file list end -->
 # How to open DetailView by clicking a grid row in the integrated Dashboard
 
 
