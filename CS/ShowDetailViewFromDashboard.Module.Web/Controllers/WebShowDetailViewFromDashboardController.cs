@@ -14,7 +14,7 @@ namespace ShowDetailViewFromDashboard.Module.Web.Controllers
     public class WebShowDetailViewFromDashboardController : ObjectViewController<DetailView, IDashboardData>, IXafCallbackHandler
     {
         private const string HandlerName = "WebShowDetailViewFromDashboardController";
-        private ParametrizedAction openDetailViewAction;
+        private readonly ParametrizedAction openDetailViewAction;
 
         protected override void OnActivated()
         {
@@ -43,8 +43,11 @@ namespace ShowDetailViewFromDashboard.Module.Web.Controllers
                                             return measure.DataMember === 'Oid';
                                         }}
                                         if (e.ItemName.includes('gridDashboardItem')) {{
-                                             var itemData = e.GetData(),
-                                                dataSlice = itemData.GetSlice(e.GetAxisPoint()),
+                                             var axisPoint = e.GetAxisPoint();
+                                             if (!axisPoint) 
+                                                 return null;
+                                             var itemData = e.GetData(),   
+                                                dataSlice = itemData.GetSlice(axisPoint),
                                                 oidMeasure = dataSlice.GetMeasures().find(findMeasure).Id,
                                                 measureValue = dataSlice.GetMeasureValue(oidMeasure);
                                                 {0}
@@ -58,8 +61,9 @@ namespace ShowDetailViewFromDashboard.Module.Web.Controllers
         }
         private void OpenDetailViewAction_Execute(object sender, ParametrizedActionExecuteEventArgs e)
         {
+            Guid.TryParse((string)e.ParameterCurrentValue, out var oid); 
             IObjectSpace objectSpace = Application.CreateObjectSpace(typeof(Contact));
-            Contact contact = objectSpace.FindObject<Contact>(new BinaryOperator("Oid", e.ParameterCurrentValue.ToString()));
+            Contact contact = objectSpace.FindObject<Contact>(new BinaryOperator(nameof(Contact.Oid), oid));
             if (contact != null)
             {
                 e.ShowViewParameters.CreatedView = Application.CreateDetailView(objectSpace, contact, View);
