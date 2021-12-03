@@ -48,21 +48,9 @@ Namespace ShowDetailViewFromDashboard.Win
             Me.Modules.Add(Me.dashboardsModule)
             Me.Modules.Add(Me.dashboardsWindowsFormsModule)
             Me.UseOldTemplates = False
-             ''' Cannot convert AssignmentExpressionSyntax, System.NullReferenceException: Object reference not set to an instance of an object.
-'''    at ICSharpCode.CodeConverter.VB.NodesVisitor.VisitAssignmentExpression(AssignmentExpressionSyntax node)
-'''    at Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor`1.Visit(SyntaxNode node)
-'''    at ICSharpCode.CodeConverter.VB.CommentConvertingVisitorWrapper`1.Accept(SyntaxNode csNode, Boolean addSourceMapping)
-''' 
-''' Input:
-'''             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ShowDetailViewFromDashboardWindowsFormsApplication_DatabaseVersionMismatch)
-'''   ''' Cannot convert AssignmentExpressionSyntax, System.NullReferenceException: Object reference not set to an instance of an object.
-'''    at ICSharpCode.CodeConverter.VB.NodesVisitor.VisitAssignmentExpression(AssignmentExpressionSyntax node)
-'''    at Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor`1.Visit(SyntaxNode node)
-'''    at ICSharpCode.CodeConverter.VB.CommentConvertingVisitorWrapper`1.Accept(SyntaxNode csNode, Boolean addSourceMapping)
-''' 
-''' Input:
-'''             this.CustomizeLanguagesList += new System.EventHandler<DevExpress.ExpressApp.CustomizeLanguagesListEventArgs>(this.ShowDetailViewFromDashboardWindowsFormsApplication_CustomizeLanguagesList)
-'''  CType((Me), System.ComponentModel.ISupportInitialize).EndInit()
+            AddHandler Me.DatabaseVersionMismatch, New System.EventHandler(Of DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs)(AddressOf Me.ShowDetailViewFromDashboardWindowsFormsApplication_DatabaseVersionMismatch)
+            AddHandler Me.CustomizeLanguagesList, New System.EventHandler(Of DevExpress.ExpressApp.CustomizeLanguagesListEventArgs)(AddressOf Me.ShowDetailViewFromDashboardWindowsFormsApplication_CustomizeLanguagesList)
+            CType((Me), System.ComponentModel.ISupportInitialize).EndInit()
         End Sub
 
 '#End Region

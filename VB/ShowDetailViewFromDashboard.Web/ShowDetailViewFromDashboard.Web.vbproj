@@ -86,7 +86,6 @@
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Web.v16.2">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
     <Reference Include="DevExpress.Persistent.Base.v16.2">
       <SpecificVersion>False</SpecificVersion>
@@ -99,14 +98,12 @@
     </Reference>
     <Reference Include="DevExpress.Utils.v16.2">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
     <Reference Include="DevExpress.Web.ASPxThemes.v16.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.Web.ASPxTreeList.v16.2">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
     <Reference Include="DevExpress.Office.v16.2.Core">
       <SpecificVersion>False</SpecificVersion>
@@ -215,11 +212,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShowDetailViewFromDashboard.Module.Web\ShowDetailViewFromDashboard.Module.Web.csproj">
+    <ProjectReference Include="..\ShowDetailViewFromDashboard.Module.Web\ShowDetailViewFromDashboard.Module.Web.vbproj">
       <Project>{ADD720EB-F466-4302-A037-4C6960EF73C8}</Project>
       <Name>ShowDetailViewFromDashboard.Module.Web</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ShowDetailViewFromDashboard.Module\ShowDetailViewFromDashboard.Module.csproj">
+    <ProjectReference Include="..\ShowDetailViewFromDashboard.Module\ShowDetailViewFromDashboard.Module.vbproj">
       <Project>{6CF8D902-9F2E-4CC0-9EC8-DB88D48AC20A}</Project>
       <Name>ShowDetailViewFromDashboard.Module</Name>
     </ProjectReference>

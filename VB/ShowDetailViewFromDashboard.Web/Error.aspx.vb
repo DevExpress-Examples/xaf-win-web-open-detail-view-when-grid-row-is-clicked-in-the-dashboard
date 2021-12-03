@@ -8,12 +8,12 @@ Public Partial Class ErrorPage
     Inherits Page
 
     Protected Overrides Sub InitializeCulture()
-        If WebApplication.Instance IsNot Nothing Then WebApplication.Instance.InitializeCulture()
+        If WebApplication.Instance IsNot Nothing Then Call WebApplication.Instance.InitializeCulture()
     End Sub
 
     Private Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs)
         If TestScriptsManager.EasyTestEnabled Then
-            Dim testScriptsManager As TestScriptsManager = New TestScriptsManager(MyBase.Page)
+            Dim testScriptsManager As TestScriptsManager = New TestScriptsManager(Page)
             testScriptsManager.RegisterControl(JSLabelTestControl.ClassName, "FormCaption", TestControlType.Field, "FormCaption")
             testScriptsManager.RegisterControl(JSLabelTestControl.ClassName, "DescriptionTextBox", TestControlType.Field, "Description")
             testScriptsManager.RegisterControl(JSDefaultTestControl.ClassName, "ReportButton", TestControlType.Action, "Report")
@@ -54,7 +54,7 @@ Public Partial Class ErrorPage
     End Sub
 
     Private Sub ErrorPage_PreRender(ByVal sender As Object, ByVal e As EventArgs)
-        RegisterThemeAssemblyController.RegisterThemeResources(CType(sender, Page))
+        Call RegisterThemeAssemblyController.RegisterThemeResources(CType(sender, Page))
     End Sub
 
 '#End Region
@@ -67,6 +67,6 @@ Public Partial Class ErrorPage
     End Sub
 
     Protected Sub NavigateToStart_Click(ByVal sender As Object, ByVal e As EventArgs)
-        WebApplication.Instance.LogOff()
+        Call WebApplication.Instance.LogOff()
     End Sub
 End Class

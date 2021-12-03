@@ -14,21 +14,21 @@ Namespace ShowDetailViewFromDashboard.Web
 
         Private module2 As DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule
 
-        Private module3 As ShowDetailViewFromDashboard.Module.ShowDetailViewFromDashboardModule
+        Private module3 As [Module].ShowDetailViewFromDashboardModule
 
-        Private module4 As ShowDetailViewFromDashboard.Module.Web.ShowDetailViewFromDashboardAspNetModule
+        Private module4 As [Module].Web.ShowDetailViewFromDashboardAspNetModule
 
-        Private dashboardsModule As DevExpress.ExpressApp.Dashboards.DashboardsModule
+        Private dashboardsModule As Dashboards.DashboardsModule
 
-        Private dashboardsAspNetModule As DevExpress.ExpressApp.Dashboards.Web.DashboardsAspNetModule
+        Private dashboardsAspNetModule As Dashboards.Web.DashboardsAspNetModule
 
         Public Sub New()
             InitializeComponent()
             LinkNewObjectToParentImmediately = False
-            DevExpress.ExpressApp.Web.Editors.ASPx.ASPxGridListEditor.AllowFilterControlHierarchy = True
-            DevExpress.ExpressApp.Web.Editors.ASPx.ASPxGridListEditor.MaxFilterControlHierarchyDepth = 3
-            DevExpress.ExpressApp.Web.Editors.ASPx.ASPxCriteriaPropertyEditor.AllowFilterControlHierarchyDefault = True
-            DevExpress.ExpressApp.Web.Editors.ASPx.ASPxCriteriaPropertyEditor.MaxHierarchyDepthDefault = 3
+            Editors.ASPx.ASPxGridListEditor.AllowFilterControlHierarchy = True
+            Editors.ASPx.ASPxGridListEditor.MaxFilterControlHierarchyDepth = 3
+            Editors.ASPx.ASPxCriteriaPropertyEditor.AllowFilterControlHierarchyDefault = True
+            Editors.ASPx.ASPxCriteriaPropertyEditor.MaxHierarchyDepthDefault = 3
         End Sub
 
         Protected Overrides Sub CreateDefaultObjectSpaceProvider(ByVal args As CreateCustomObjectSpaceProviderEventArgs)
@@ -36,7 +36,7 @@ Namespace ShowDetailViewFromDashboard.Web
             args.ObjectSpaceProviders.Add(New NonPersistentObjectSpaceProvider(TypesInfo, Nothing))
         End Sub
 
-        Private Function GetDataStoreProvider(ByVal connectionString As String, ByVal connection As Data.IDbConnection) As IXpoDataStoreProvider
+        Private Function GetDataStoreProvider(ByVal connectionString As String, ByVal connection As System.Data.IDbConnection) As IXpoDataStoreProvider
             Dim application As System.Web.HttpApplicationState = If(System.Web.HttpContext.Current IsNot Nothing, System.Web.HttpContext.Current.Application, Nothing)
             Dim dataStoreProvider As IXpoDataStoreProvider = Nothing
             If application IsNot Nothing AndAlso application("DataStoreProvider") IsNot Nothing Then
@@ -57,7 +57,7 @@ Namespace ShowDetailViewFromDashboard.Web
             Return dataStoreProvider
         End Function
 
-        Private Sub ShowDetailViewFromDashboardAspNetApplication_DatabaseVersionMismatch(ByVal sender As Object, ByVal e As DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs)
+        Private Sub ShowDetailViewFromDashboardAspNetApplication_DatabaseVersionMismatch(ByVal sender As Object, ByVal e As DatabaseVersionMismatchEventArgs)
 #If EASYTEST
             e.Updater.Update();
             e.Handled = true;
@@ -77,12 +77,12 @@ Namespace ShowDetailViewFromDashboard.Web
         End Sub
 
         Private Sub InitializeComponent()
-            module1 = New DevExpress.ExpressApp.SystemModule.SystemModule()
-            module2 = New DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule()
-            module3 = New ShowDetailViewFromDashboard.Module.ShowDetailViewFromDashboardModule()
-            module4 = New ShowDetailViewFromDashboard.Module.Web.ShowDetailViewFromDashboardAspNetModule()
-            dashboardsModule = New DevExpress.ExpressApp.Dashboards.DashboardsModule()
-            dashboardsAspNetModule = New DevExpress.ExpressApp.Dashboards.Web.DashboardsAspNetModule()
+            module1 = New SystemModule.SystemModule()
+            module2 = New SystemModule.SystemAspNetModule()
+            module3 = New [Module].ShowDetailViewFromDashboardModule()
+            module4 = New [Module].Web.ShowDetailViewFromDashboardAspNetModule()
+            dashboardsModule = New Dashboards.DashboardsModule()
+            dashboardsAspNetModule = New Dashboards.Web.DashboardsAspNetModule()
             CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
             '
             ' dashboardsModule
@@ -91,22 +91,16 @@ Namespace ShowDetailViewFromDashboard.Web
             ' 
             ' ShowDetailViewFromDashboardAspNetApplication
             ' 
-            Me.ApplicationName = "ShowDetailViewFromDashboard"
-            Me.CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema
-            Me.Modules.Add(module1)
-            Me.Modules.Add(module2)
-            Me.Modules.Add(module3)
-            Me.Modules.Add(module4)
-            Me.Modules.Add(dashboardsModule)
-            Me.Modules.Add(dashboardsAspNetModule)
-             ''' Cannot convert AssignmentExpressionSyntax, System.NullReferenceException: Object reference not set to an instance of an object.
-'''    at ICSharpCode.CodeConverter.VB.NodesVisitor.VisitAssignmentExpression(AssignmentExpressionSyntax node)
-'''    at Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor`1.Visit(SyntaxNode node)
-'''    at ICSharpCode.CodeConverter.VB.CommentConvertingVisitorWrapper`1.Accept(SyntaxNode csNode, Boolean addSourceMapping)
-''' 
-''' Input:
-'''             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ShowDetailViewFromDashboardAspNetApplication_DatabaseVersionMismatch)
-'''  CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
+            ApplicationName = "ShowDetailViewFromDashboard"
+            CheckCompatibilityType = CheckCompatibilityType.DatabaseSchema
+            Modules.Add(module1)
+            Modules.Add(module2)
+            Modules.Add(module3)
+            Modules.Add(module4)
+            Modules.Add(dashboardsModule)
+            Modules.Add(dashboardsAspNetModule)
+            AddHandler DatabaseVersionMismatch, New EventHandler(Of DatabaseVersionMismatchEventArgs)(AddressOf ShowDetailViewFromDashboardAspNetApplication_DatabaseVersionMismatch)
+            CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         End Sub
     End Class
 End Namespace

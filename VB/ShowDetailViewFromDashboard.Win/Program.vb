@@ -3,9 +3,7 @@ Imports System.Configuration
 Imports System.Windows.Forms
 Imports DevExpress.ExpressApp
 Imports DevExpress.ExpressApp.Security
-Imports DevExpress.ExpressApp.Win
 Imports DevExpress.Persistent.Base
-Imports DevExpress.Persistent.BaseImpl
 
 Namespace ShowDetailViewFromDashboard.Win
 
@@ -22,11 +20,11 @@ Namespace ShowDetailViewFromDashboard.Win
             Call Application.EnableVisualStyles()
             Application.SetCompatibleTextRenderingDefault(False)
             EditModelPermission.AlwaysGranted = System.Diagnostics.Debugger.IsAttached
-            If Tracing.GetFileLocationFromSettings() Is DevExpress.Persistent.Base.FileLocation.CurrentUserApplicationDataFolder Then
+            If Tracing.GetFileLocationFromSettings() = DevExpress.Persistent.Base.FileLocation.CurrentUserApplicationDataFolder Then
                 Tracing.LocalUserAppDataPath = Application.LocalUserAppDataPath
             End If
 
-            Tracing.Initialize()
+            Call Tracing.Initialize()
             Dim winApplication As ShowDetailViewFromDashboardWindowsFormsApplication = New ShowDetailViewFromDashboardWindowsFormsApplication()
             ' Refer to the https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112680.aspx help article for more details on how to provide a custom splash form.
             'winApplication.SplashScreen = new DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png");
@@ -39,7 +37,7 @@ Namespace ShowDetailViewFromDashboard.Win
                 winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["EasyTestConnectionString"].ConnectionString;
             }
 #End If
-            If System.Diagnostics.Debugger.IsAttached AndAlso winApplication.CheckCompatibilityType Is CheckCompatibilityType.DatabaseSchema Then
+            If System.Diagnostics.Debugger.IsAttached AndAlso winApplication.CheckCompatibilityType = CheckCompatibilityType.DatabaseSchema Then
                 winApplication.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways
             End If
 

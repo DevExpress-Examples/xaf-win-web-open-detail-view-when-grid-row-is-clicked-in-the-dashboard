@@ -3,8 +3,6 @@ Imports System.Configuration
 Imports System.Web
 Imports DevExpress.ExpressApp
 Imports DevExpress.Persistent.Base
-Imports DevExpress.Persistent.BaseImpl
-Imports DevExpress.ExpressApp.Security
 Imports DevExpress.ExpressApp.Web
 Imports DevExpress.Web
 
@@ -18,24 +16,18 @@ Namespace ShowDetailViewFromDashboard.Web
         End Sub
 
         Protected Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
-             ''' Cannot convert AssignmentExpressionSyntax, System.NullReferenceException: Object reference not set to an instance of an object.
-'''    at ICSharpCode.CodeConverter.VB.NodesVisitor.VisitAssignmentExpression(AssignmentExpressionSyntax node)
-'''    at Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor`1.Visit(SyntaxNode node)
-'''    at ICSharpCode.CodeConverter.VB.CommentConvertingVisitorWrapper`1.Accept(SyntaxNode csNode, Boolean addSourceMapping)
-''' 
-''' Input:
-'''             ASPxWebControl.CallbackError += new System.EventHandler(this.Application_Error)
-'''  WebApplication.EnableMultipleBrowserTabsSupport = True
+            AddHandler ASPxWebControl.CallbackError, New EventHandler(AddressOf Application_Error)
+            WebApplication.EnableMultipleBrowserTabsSupport = True
 #If EASYTEST
             DevExpress.ExpressApp.Web.TestScripts.TestScriptsManager.EasyTestEnabled = true;
 #End If
         End Sub
 
         Protected Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)
-            Tracing.Initialize()
-            WebApplication.SetInstance(Session, New ShowDetailViewFromDashboardAspNetApplication())
-            DevExpress.ExpressApp.Web.Templates.DefaultVerticalTemplateContentNew.ClearSizeLimit()
-            WebApplication.Instance.SwitchToNewStyle()
+            Call Tracing.Initialize()
+            Call WebApplication.SetInstance(Session, New ShowDetailViewFromDashboardAspNetApplication())
+            Templates.DefaultVerticalTemplateContentNew.ClearSizeLimit()
+            Call WebApplication.Instance.SwitchToNewStyle()
             If ConfigurationManager.ConnectionStrings("ConnectionString") IsNot Nothing Then
                 WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings("ConnectionString").ConnectionString
             End If
@@ -45,12 +37,12 @@ Namespace ShowDetailViewFromDashboard.Web
                 WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["EasyTestConnectionString"].ConnectionString;
             }
 #End If
-            If System.Diagnostics.Debugger.IsAttached AndAlso WebApplication.Instance.CheckCompatibilityType Is CheckCompatibilityType.DatabaseSchema Then
+            If System.Diagnostics.Debugger.IsAttached AndAlso WebApplication.Instance.CheckCompatibilityType = CheckCompatibilityType.DatabaseSchema Then
                 WebApplication.Instance.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways
             End If
 
-            WebApplication.Instance.Setup()
-            WebApplication.Instance.Start()
+            Call WebApplication.Instance.Setup()
+            Call WebApplication.Instance.Start()
         End Sub
 
         Protected Sub Application_BeginRequest(ByVal sender As Object, ByVal e As EventArgs)
@@ -63,7 +55,7 @@ Namespace ShowDetailViewFromDashboard.Web
         End Sub
 
         Protected Sub Application_Error(ByVal sender As Object, ByVal e As EventArgs)
-            ErrorHandling.Instance.ProcessApplicationError()
+            Call ErrorHandling.Instance.ProcessApplicationError()
         End Sub
 
         Protected Sub Session_End(ByVal sender As Object, ByVal e As EventArgs)

@@ -154,7 +154,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShowDetailViewFromDashboard.Module\ShowDetailViewFromDashboard.Module.csproj">
+    <ProjectReference Include="..\ShowDetailViewFromDashboard.Module\ShowDetailViewFromDashboard.Module.vbproj">
       <Project>{6CF8D902-9F2E-4CC0-9EC8-DB88D48AC20A}</Project>
       <Name>ShowDetailViewFromDashboard.Module</Name>
     </ProjectReference>

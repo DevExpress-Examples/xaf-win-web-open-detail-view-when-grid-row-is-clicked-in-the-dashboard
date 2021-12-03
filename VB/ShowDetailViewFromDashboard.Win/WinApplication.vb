@@ -2,7 +2,6 @@ Imports System
 Imports System.ComponentModel
 Imports DevExpress.ExpressApp
 Imports DevExpress.ExpressApp.Win
-Imports DevExpress.ExpressApp.Updating
 Imports DevExpress.ExpressApp.Xpo
 
 Namespace ShowDetailViewFromDashboard.Win
@@ -28,7 +27,7 @@ Namespace ShowDetailViewFromDashboard.Win
             End If
         End Sub
 
-        Private Sub ShowDetailViewFromDashboardWindowsFormsApplication_DatabaseVersionMismatch(ByVal sender As Object, ByVal e As DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs)
+        Private Sub ShowDetailViewFromDashboardWindowsFormsApplication_DatabaseVersionMismatch(ByVal sender As Object, ByVal e As DatabaseVersionMismatchEventArgs)
 #If EASYTEST
             e.Updater.Update();
             e.Handled = true;

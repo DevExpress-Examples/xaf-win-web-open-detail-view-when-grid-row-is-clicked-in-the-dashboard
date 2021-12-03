@@ -27,7 +27,7 @@ Namespace ShowDetailViewFromDashboard.Module.Web.Controllers
                     CustomizeDashboardViewer(dashboardViewerViewItem.DashboardDesigner)
                 End If
 
-                dashboardViewerViewItem.ControlCreated += AddressOf DashboardViewerViewItem_ControlCreated
+                AddHandler dashboardViewerViewItem.ControlCreated, AddressOf DashboardViewerViewItem_ControlCreated
             End If
         End Sub
 
@@ -43,15 +43,15 @@ Namespace ShowDetailViewFromDashboard.Module.Web.Controllers
             dashboardControl.ClientSideEvents.ItemClick = String.Format(widgetScript, callbackManager.GetScript(HandlerName, "measureValue.GetValue()"))
         End Sub
 
-        Public Sub ProcessAction(ByVal parameter As String)
+        Public Sub ProcessAction(ByVal parameter As String) Implements IXafCallbackHandler.ProcessAction
             openDetailViewAction.DoExecute(parameter)
         End Sub
 
         Private Sub OpenDetailViewAction_Execute(ByVal sender As Object, ByVal e As ParametrizedActionExecuteEventArgs)
             Dim oid As Guid = Nothing
             Guid.TryParse(CStr(e.ParameterCurrentValue), oid)
-            Dim objectSpace As IObjectSpace = Application.CreateObjectSpace(GetType([Module].BusinessObjects.Contact))
-            Dim contact As [Module].BusinessObjects.Contact = objectSpace.FindObject(Of [Module].BusinessObjects.Contact)(New BinaryOperator(NameOf([Module].BusinessObjects.Contact.Oid), oid))
+            Dim objectSpace As IObjectSpace = Application.CreateObjectSpace(GetType(Contact))
+            Dim contact As Contact = objectSpace.FindObject(Of Contact)(New BinaryOperator(NameOf(BusinessObjects.Contact.Oid), oid))
             If contact IsNot Nothing Then
                 e.ShowViewParameters.CreatedView = Application.CreateDetailView(objectSpace, contact, View)
             End If
@@ -60,7 +60,7 @@ Namespace ShowDetailViewFromDashboard.Module.Web.Controllers
         Protected Overrides Sub OnDeactivated()
             Dim dashboardViewerViewItem As WebDashboardViewerViewItem = TryCast(View.FindItem("DashboardViewer"), WebDashboardViewerViewItem)
             If dashboardViewerViewItem IsNot Nothing Then
-                dashboardViewerViewItem.ControlCreated -= AddressOf DashboardViewerViewItem_ControlCreated
+                RemoveHandler dashboardViewerViewItem.ControlCreated, AddressOf DashboardViewerViewItem_ControlCreated
             End If
 
             MyBase.OnDeactivated()
@@ -70,7 +70,7 @@ Namespace ShowDetailViewFromDashboard.Module.Web.Controllers
             openDetailViewAction = New ParametrizedAction(Me, "Dashboard_OpenDetailView", "Dashboard", GetType(String))
             openDetailViewAction.Caption = "OpenDetailView"
             openDetailViewAction.SelectionDependencyType = SelectionDependencyType.RequireSingleObject
-            Me.openDetailViewAction.Execute += AddressOf OpenDetailViewAction_Execute
+            AddHandler openDetailViewAction.Execute, AddressOf OpenDetailViewAction_Execute
         End Sub
     End Class
 End Namespace
