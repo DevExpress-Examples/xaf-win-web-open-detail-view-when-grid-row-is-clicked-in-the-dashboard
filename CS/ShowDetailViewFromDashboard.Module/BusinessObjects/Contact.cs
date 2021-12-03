@@ -4,10 +4,8 @@ using DevExpress.Xpo;
 
 namespace ShowDetailViewFromDashboard.Module.BusinessObjects {
     [DefaultClassOptions]
-    public class Contact : Person
-    {
-        public Contact(Session session) : base(session)
-        {
+    public class Contact : Person {
+        public Contact(Session session) : base(session) {
         }
     }
 }
