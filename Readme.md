@@ -1,38 +1,5 @@
-<!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/128592134/24.2.1%2B)
-[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T488012)
-[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
-[![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
-<!-- default badges end -->
-
 # XAF - Open a Detail View When the Grid Row is Clicked in the Dashboard (WinForms and ASP.NET Web Forms)
 
-This example demonstrates how to invoke a Detail View when a user clicks a row in [GridDashboardItem](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.GridDashboardItem). In the invoked Detail View, a user can view or edit a [business object](https://docs.devexpress.com/eXpressAppFramework/113664/business-model-design-orm) corresponding to the clicked row.
+This example is unavailable in v25.2+ since we ended XAF WebForms & WinForms .NET Framework support in our v25.2+ release cycle. We also removed all XAF .NET Framework and legacy .NET modules/APIs, and older/deprecated Security System implementations from our source code. 
 
-See the following help topic for more information: [Open a Detail View When the Grid Row is Clicked in the Dashboard (WinForms and ASP.NET Web Forms)](https://docs.devexpress.com/eXpressAppFramework/118348/analytics/dashboards/open-a-detail-view-when-the-grid-row-is-clicked-in-the-dashboard-winforms-web-forms).
-
-<!-- default file list -->
-## Files to Look at
-
-* [WebShowDetailViewFromDashboardController.cs](./CS/ShowDetailViewFromDashboard.Module.Web/Controllers/WebShowDetailViewFromDashboardController.cs) (VB: [WebShowDetailViewFromDashboardController.vb](./VB/ShowDetailViewFromDashboard.Module.Web/Controllers/WebShowDetailViewFromDashboardController.vb))
-* [WinShowDetailViewFromDashboardController.cs](./CS/ShowDetailViewFromDashboard.Module.Win/Controllers/WinShowDetailViewFromDashboardController.cs) (VB: [WinShowDetailViewFromDashboardController.vb](./VB/ShowDetailViewFromDashboard.Module.Win/Controllers/WinShowDetailViewFromDashboardController.vb))
-<!-- default file list end -->
-
-## Documentation
-
-* [Dashboards Module](https://docs.devexpress.com/eXpressAppFramework/117449/analytics/dashboards-module)
-* [Open a Detail View When the Grid Row is Clicked in the Dashboard (WinForms and ASP.NET Web Forms)](https://docs.devexpress.com/eXpressAppFramework/118348/analytics/dashboards/open-a-detail-view-when-the-grid-row-is-clicked-in-the-dashboard-winforms-web-forms)
-* [Open a Detail View When the Grid Row is Clicked in the Dashboard (Blazor)](https://docs.devexpress.com/eXpressAppFramework/403531/analytics/dashboards/open-a-detail-view-when-the-grid-row-is-clicked-in-the-dashboard-blazor)
-
-## More Examples
-
-[How to open DetailView by clicking a grid row in the integrated Dashboard (Blazor)](https://github.com/DevExpress-Examples/xaf-blazor-open-detail-view-when-grid-row-is-clicked-in-the-dashboard) 
-
-
-<!-- feedback -->
-## Does this example address your development requirements/objectives?
-
-[<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=xaf-win-web-open-detail-view-when-grid-row-is-clicked-in-the-dashboard&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=xaf-win-web-open-detail-view-when-grid-row-is-clicked-in-the-dashboard&~~~was_helpful=no)
-
-(you will be redirected to DevExpress.com to submit your response)
-<!-- feedback end -->
+For more information, refer to the following article: [XAF - Legacy .NET Framework (WinForms and ASP.NET WebForms) APIs, .NET-based API/Modules, and Security System have been removed from distribution](https://supportcenter.devexpress.com/ticket/details/t1312589/xaf-legacy-net-framework-winforms-and-asp-net-webforms-apis-net-based-api-modules-and)
